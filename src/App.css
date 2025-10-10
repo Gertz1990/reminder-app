@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Reminder app styles */
+.app-root {
+  max-width: 760px;
+  margin: 24px auto;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+.app-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.subtitle {
+  color: #666;
+  margin-top: 6px;
+}
+.reminder-app {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+.reminder-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.input-text { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #ddd }
+.input-date { width: 220px; padding: 8px; border-radius: 6px; border: 1px solid #ddd }
+.btn-add { padding: 8px 12px; border-radius: 6px; border: none; background:#06f; color:#fff }
+.error { color: #b00020; margin-bottom: 8px }
+.reminder-list { display: flex; flex-direction: column; gap: 8px }
+.reminder-item { display:flex; gap:12px; align-items:center; padding:8px; border-radius:6px; border:1px solid #fafafa }
+.reminder-item.done { opacity:0.6; text-decoration: line-through }
+.reminder-item .left { width: 32px }
+.reminder-item .center { flex:1 }
+.reminder-item .text { font-weight:500 }
+.reminder-item .meta { font-size:12px; color:#666 }
+.btn-delete { background: transparent; border:1px solid #e33; color:#e33; padding:6px 8px; border-radius:6px }
+.empty { color:#666; padding:12px; text-align:center }
