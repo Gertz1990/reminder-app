@@ -1,16 +1,70 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простое SPA-приложение для создания и управления напоминаниями. Данные хранятся в localStorage в браузере.
 
-Currently, two official plugins are available:
+## Локальная разработка
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Перейдите в папку проекта:
+# Reminder App (React + Vite)
 
-## React Compiler
+Это простое одностраничное приложение для создания и управления напоминаниями. Данные сохраняются в браузерном `localStorage`.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Быстрый старт (локальная разработка)
 
-## Expanding the ESLint configuration
+1. Перейдите в папку проекта:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+cd reminder-app
+```
+
+2. Установите зависимости и запустите dev-сервер:
+
+```bash
+npm install
+npm run dev
+```
+
+По умолчанию Vite откроет приложение на `http://localhost:5173/`. Если порт занят, Vite выберет другой доступный.
+
+## Сборка для продакшна и предпросмотр
+
+```bash
+npm run build
+npx vite preview
+```
+
+## Docker
+
+Для контейнеризации добавлен `Dockerfile` (multi-stage). Он собирает приложение и отдаёт статические файлы через nginx.
+
+Сборка и запуск контейнера:
+
+```bash
+docker build -t reminder-app .
+docker run -p 5173:80 reminder-app
+```
+
+После запуска откройте http://localhost:5173/.
+
+## Деплой
+
+- Vercel: подключите репозиторий и ветку `main`, Vercel автоматически соберёт и задеплоит проект.
+- Netlify: подключите репозиторий (Build command: `npm run build`, Publish directory: `dist`) или используйте `netlify-cli`.
+- GitHub Pages: в репозитории есть GitHub Actions workflow (`.github/workflows/deploy.yml`), который собирает проект и деплоит `dist` при пуше в `main`.
+
+## Возможности приложения
+
+- Добавление, удаление и редактирование напоминаний
+- Отметка выполненных
+- Фильтры: Все / Активные / Выполненные
+- Экспорт и импорт данных в формате JSON
+- Подсветка просроченных напоминаний
+
+## Идеи для улучшения
+
+- Web Notifications (сообщения браузера)
+- Теги/категории и фильтрация по ним
+- Экспорт в iCal / синхронизация с календарём
+- Юнит-тесты и CI на GitHub Actions
+
+Если хотите, могу помочь добавить автоматический деплой на Vercel или настроить CI и тесты.

@@ -53,7 +53,7 @@
   margin-bottom: 16px;
 }
 .subtitle {
-  color: #666;
+  color: #333; /* darker for better contrast */
   margin-top: 6px;
 }
 .reminder-app {
@@ -67,17 +67,28 @@
   display: flex;
   gap: 8px;
   margin-bottom: 12px;
+  align-items: center;
 }
-.input-text { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #ddd }
-.input-date { width: 220px; padding: 8px; border-radius: 6px; border: 1px solid #ddd }
-.btn-add { padding: 8px 12px; border-radius: 6px; border: none; background:#06f; color:#fff }
+.input-text { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #d7d7d7; color: #111 }
+.input-date { width: 220px; padding: 8px; border-radius: 8px; border: 1px solid #d7d7d7; color: #111 }
+.btn-add { padding: 8px 12px; border-radius: 8px; border: none; background:#0b63ff; color:#fff; cursor:pointer }
+.btn-add:hover { filter: brightness(0.95) }
 .error { color: #b00020; margin-bottom: 8px }
 .reminder-list { display: flex; flex-direction: column; gap: 8px }
-.reminder-item { display:flex; gap:12px; align-items:center; padding:8px; border-radius:6px; border:1px solid #fafafa }
-.reminder-item.done { opacity:0.6; text-decoration: line-through }
-.reminder-item .left { width: 32px }
+.reminder-item { display:flex; gap:12px; align-items:center; padding:10px; border-radius:8px; border:1px solid #f3f3f3; background: #fff }
+.reminder-item.done { opacity:0.7; text-decoration: line-through; color:#444 }
+.reminder-item .left { width: 36px }
 .reminder-item .center { flex:1 }
-.reminder-item .text { font-weight:500 }
-.reminder-item .meta { font-size:12px; color:#666 }
-.btn-delete { background: transparent; border:1px solid #e33; color:#e33; padding:6px 8px; border-radius:6px }
-.empty { color:#666; padding:12px; text-align:center }
+.reminder-item .text { font-weight:600; color:#111 }
+.reminder-item .meta { font-size:12px; color:#444 }
+.btn-delete { background: transparent; border:1px solid #e33; color:#e33; padding:6px 8px; border-radius:6px; cursor:pointer }
+.empty { color:#444; padding:12px; text-align:center }
+
+/* Overdue */
+.reminder-item.overdue { border-color: rgba(227,51,51,0.12); box-shadow: 0 2px 6px rgba(227,51,51,0.06) }
+.reminder-item.overdue .text { color: #b22222 }
+
+/* Filters */
+.filters { display:flex; gap:8px; margin-bottom:12px }
+.filter-btn { padding:6px 10px; border-radius:6px; border:1px solid #ddd; background:#fff; cursor:pointer }
+.filter-btn.active { background:#0b63ff; color:#fff; border-color:#0b63ff }
