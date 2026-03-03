@@ -101,7 +101,7 @@ export default function ReminderApp() {
     try {
       const d = new Date(it.when)
       return d.getTime() < Date.now()
-    } catch (e) {
+    } catch {
       return false
     }
   }
